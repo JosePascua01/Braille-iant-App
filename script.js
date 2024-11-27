@@ -41,6 +41,7 @@ const appLogics = (() => {
     }
 
     const previewFile = (event) => {
+        alert(`This should show the preview page`);
         const input = event.target;
         const reader = new FileReader();
 
