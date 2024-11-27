@@ -19,7 +19,7 @@
         <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon"
                 class="ri-arrow-left-line"></i></button>
         <input type="file" id="picture" name="picture" accept="image/png" capture="environment" style="display: none;"
-            onchange="appLogics.previewFile(event)" /><!--Hidden handler for taken images-->
+            oninput="appLogics.previewFile(event)" /><!--Hidden handler for taken images-->
 
         <div class="intro">
             <div id="emptySpace1" class="white-background"></div>
@@ -45,7 +45,8 @@
             <header>Braille'iant</header>
             <div id="body">
                 <div id="container">
-                    <button onclick="appLogics.takePic()"><i class="ri-camera-line"></i><br>Capture</button>
+                    <button id="image-capture" onclick="appLogics.takePic()"><i
+                            class="ri-camera-line"></i><br>Capture</button>
                     <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
                     <button onclick="appLogics.showSection('saved-page')"><i class="ri-folders-line"></i><br>Saved
                         Files</button>

@@ -1,6 +1,14 @@
 let intro = document.querySelector('.intro');
 let sections = document.querySelectorAll('section'); // stores all sections in an array  sections = [home-page, capture-page...]
 let backBtn = document.querySelector('button#back-btn')
+let imageCapture = document.querySelector('button#image-capture');
+
+imageCapture.addEventListener('change', (event) => {
+    if (event.target === document.getElementById('picture')) {
+        appLogics.previewFile(event);
+    }
+});
+
 /*This Section is the loading page of the application*/
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(
