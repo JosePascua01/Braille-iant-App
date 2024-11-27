@@ -233,6 +233,16 @@ i:not(#back-icon) { /*Icons*/
     2px 2px 2px rgba(0,0,0,0.5)
 }
 
+/*↓↓↓↓ Components for capture page ↓↓↓↓*/
+div#body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: calc(100vh - 100px);
+    padding: 15% 7.5% 65%;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

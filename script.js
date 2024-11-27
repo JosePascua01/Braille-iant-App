@@ -15,13 +15,13 @@ window.addEventListener('DOMContentLoaded', () => {
 //console.log(sections.length);
 const appLogics = (() => {
 
-    const startHome = () =>{
+    const startHome = () => {
         return document.querySelector('#home-page').classList.remove('hidden'), document.querySelector('#home-page').classList.add('active');
     }
 
     const showSection = (sectionId, currentIndex) => { //showSection = function, sectionId =
-/*        console.log(backBtn); 
-        console.log(sectionId);*/
+        /*        console.log(backBtn); 
+                console.log(sectionId);*/
         const link = document.querySelector(`section#${sectionId}`);
         console.log(`currentIndex = ${currentIndex}`);
         link.classList.add('active');
@@ -29,15 +29,22 @@ const appLogics = (() => {
 
         sectionId !== 'home-page' ? backBtn.classList.remove('hidden') : backBtn.classList.add('hidden'); //if the current section shown is not homepage then add back button otherwise remove
 
-        sections.forEach((section) => { //goes through all section element inside of the sections array
-            if (section.id !== sectionId) { //if the current section id is not the current section being shown, hide that section
-                section.classList.add('hidden');
-                section.classList.remove('active');
-            }
-        });
+            sections.forEach((section) => { //goes through all section element inside of the sections array
+                if (section.id !== sectionId) { //if the current section id is not the current section being shown, hide that section
+                    section.classList.add('hidden');
+                    section.classList.remove('active');
+                }
+            });
     }
-    return{
+
+    const takePic = () =>{
+        document.querySelector('#picture').click();
+    }
+
+
+    return {
         startHome,
         showSection,
+        takePic,
     }
 })();
