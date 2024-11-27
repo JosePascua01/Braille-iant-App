@@ -35,29 +35,29 @@
             <div id="emptySpace14" class="white-background"></div>
         </div><!--End of Intro/Welcome Page-->
 
-        <section id="home-page" class="active">
+        <section id="home-page" class="hidden">
             <header>Braille'iant</header>
-            <button onclick="showSection('capture-page', 1)">Capture</button>
+            <button onclick="appStart.showSection('capture-page', 1)">Capture</button>
             <button onclick="alert()">Upload</button>
-            <button onclick="showSection('saved-page', 2)">Saved Files</button>
-            <button onclick="showSection('faqs-page', 3)">FAQs</button>
+            <button onclick="appStart.showSection('saved-page', 2)">Saved Files</button>
+            <button onclick="appStart.showSection('faqs-page', 3)">FAQs</button>
         </section>
 
         <section id="capture-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Capture
+                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Capture
             </header>
         </section>
 
         <section id="saved-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Saved Files
+                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Saved Files
             </header>
         </section>
 
         <section id="faqs-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>FAQs
+                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>FAQs
             </header>
         </section>
 
