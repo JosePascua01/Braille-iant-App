@@ -213,7 +213,7 @@ div#container{
     gap: 7.5%;
 }
 
-button:not(button#back-btn) {
+button:not(#back-btn, #OCR-button) {
     place-self: center;
     width: calc((315px - 7.5% )/ 2);
     aspect-ratio: 1 / 1;
@@ -233,14 +233,40 @@ i:not(#back-icon) { /*Icons*/
     2px 2px 2px rgba(0,0,0,0.5)
 }
 
-/*↓↓↓↓ Components for capture page ↓↓↓↓*/
-div#body {
+/*↓↓↓↓ Components for preview page ↓↓↓↓*/
+div#preview-container {
+    width: 100vw;
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-rows: 75% 25%;
+    padding: 0;
+}
+
+div#preview-img{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
-    height: calc(100vh - 100px);
-    padding: 15% 7.5% 65%;
+    height: auto;
+    overflow: scroll;
+}
+
+div#button-container{
+    background-color: var(--header);
+    width: 100vw;
+    height: auto;
+    display: grid;
+    place-content: center;
+}
+
+button#OCR-button{
+    width: auto;
+    aspect-ratio: 1 / 1;
+    border: none;
+    background-color: var(--header);
+    color: var(--background);
+    font-weight: 100;
+    margin: 0;
 }
 
 @keyframes fadeIn {

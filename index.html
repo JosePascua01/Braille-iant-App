@@ -18,8 +18,9 @@
 
         <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon"
                 class="ri-arrow-left-line"></i></button>
-        <input type="file" id="picture" name="picture" accept="image/*" capture="environment" style="display: none;" />
-        
+        <input type="file" id="picture" name="picture" accept="image/png" capture="environment" style="display: none;"
+            onchange="appLogics.previewFile(event)" /><!--Hidden handler for taken images-->
+
         <div class="intro">
             <div id="emptySpace1" class="white-background"></div>
             <div id="emptySpace2" class="white-background"></div>
@@ -46,15 +47,32 @@
                 <div id="container">
                     <button onclick="appLogics.takePic()"><i class="ri-camera-line"></i><br>Capture</button>
                     <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
-                    <button onclick="appLogics.showSection('saved-page', 1)"><i class="ri-folders-line"></i><br>Saved
+                    <button onclick="appLogics.showSection('saved-page')"><i class="ri-folders-line"></i><br>Saved
                         Files</button>
-                    <button onclick="appLogics.showSection('faqs-page', 2)"><i
+                    <button onclick="appLogics.showSection('faqs-page')"><i
                             class="ri-question-answer-line"></i><br>FAQs</button>
                 </div>
             </div>
         </section>
 
-        <section id="preview-page" class="hidden"></section>
+        <section id="preview-page" class="hidden">
+            <header>Preview</header>
+            <div id="preview-container">
+                <div id="preview-img">
+                    <img id="output-img" />
+                </div>
+                <div id="button-container">
+                    <button id="OCR-button" onclick="appLogics.showSection('OCR-page')"><i
+                            class="ri-character-recognition-line"></i><br>Extract Text</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="OCR-page" class="hidden">
+            <header>OCR</header>
+            <div id="OCR-container">
+            </div>
+        </section>
 
         <section id="saved-page" class="hidden">
             <header>
