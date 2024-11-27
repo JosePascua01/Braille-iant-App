@@ -15,6 +15,9 @@
 
 <body>
     <div class="mobile">
+
+        <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon" class="ri-arrow-left-line"></i></button>
+
         <div class="intro">
             <div id="emptySpace1" class="white-background"></div>
             <div id="emptySpace2" class="white-background"></div>
@@ -37,27 +40,29 @@
 
         <section id="home-page" class="hidden">
             <header>Braille'iant</header>
-            <button onclick="appStart.showSection('capture-page', 1)">Capture</button>
-            <button onclick="alert()">Upload</button>
-            <button onclick="appStart.showSection('saved-page', 2)">Saved Files</button>
-            <button onclick="appStart.showSection('faqs-page', 3)">FAQs</button>
+            <div id="container">
+                <button onclick="appLogics.showSection('capture-page', 1)"><i class="ri-camera-line"></i><br>Capture</button>
+                <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
+                <button onclick="appLogics.showSection('saved-page', 2)"><i class="ri-folders-line"></i><br>Saved Files</button>
+                <button onclick="appLogics.showSection('faqs-page', 3)"><i class="ri-question-answer-line"></i><br>FAQs</button>
+            </div>
         </section>
 
         <section id="capture-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Capture
+                Capture
             </header>
         </section>
 
         <section id="saved-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Saved Files
-            </header>
+                Saved Files
+           </header>
         </section>
 
         <section id="faqs-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="appStart.showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>FAQs
+                FAQs
             </header>
         </section>
 
