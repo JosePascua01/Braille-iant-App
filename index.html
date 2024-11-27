@@ -16,7 +16,8 @@
 <body>
     <div class="mobile">
 
-        <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon" class="ri-arrow-left-line"></i></button>
+        <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon"
+                class="ri-arrow-left-line"></i></button>
 
         <div class="intro">
             <div id="emptySpace1" class="white-background"></div>
@@ -40,11 +41,16 @@
 
         <section id="home-page" class="hidden">
             <header>Braille'iant</header>
-            <div id="container">
-                <button onclick="appLogics.showSection('capture-page', 1)"><i class="ri-camera-line"></i><br>Capture</button>
-                <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
-                <button onclick="appLogics.showSection('saved-page', 2)"><i class="ri-folders-line"></i><br>Saved Files</button>
-                <button onclick="appLogics.showSection('faqs-page', 3)"><i class="ri-question-answer-line"></i><br>FAQs</button>
+            <div id="body">
+                <div id="container">
+                    <button onclick="appLogics.showSection('capture-page', 1)"><i
+                            class="ri-camera-line"></i><br>Capture</button>
+                    <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
+                    <button onclick="appLogics.showSection('saved-page', 2)"><i class="ri-folders-line"></i><br>Saved
+                        Files</button>
+                    <button onclick="appLogics.showSection('faqs-page', 3)"><i
+                            class="ri-question-answer-line"></i><br>FAQs</button>
+                </div>
             </div>
         </section>
 
@@ -57,7 +63,7 @@
         <section id="saved-page" class="hidden">
             <header>
                 Saved Files
-           </header>
+            </header>
         </section>
 
         <section id="faqs-page" class="hidden">
