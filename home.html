@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="Braille'iantLogo-Icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@0,600;0,800;1,300&display=swap"
+        rel="stylesheet">
+    <title>Braille'iant</title>
+</head>
+
+<body>
+    <div class="mobile">
+        <div class="intro">
+            <div id="emptySpace1" class="white-background"></div>
+            <div id="emptySpace2" class="white-background"></div>
+            <div id="emptySpace3" class="white-background"></div>
+            <div id="emptySpace4" class="white-background"></div>
+            <div id="emptySpace5" class="white-background"></div>
+            <div id="emptySpace6" class="white-background"></div>
+            <div id="emptySpace7" class="white-background"></div>
+            <div id="logoContainer" class="white-background">
+                <img id="Opening-logo" src="Braille'iantLogo.png">
+            </div>
+            <div id="emptySpace8" class="white-background"></div>
+            <div id="emptySpace9" class="white-background"></div>
+            <div id="emptySpace10" class="white-background"></div>
+            <div id="emptySpace11" class="white-background"></div>
+            <div id="emptySpace12" class="white-background"></div>
+            <div id="emptySpace13" class="white-background"></div>
+            <div id="emptySpace14" class="white-background"></div>
+        </div><!--End of Intro/Welcome Page-->
+
+        <section id="home-page" class="active">
+            <header>Braille'iant</header>
+            <button onclick="showSection('capture-page', 1)">Capture</button>
+            <button onclick="alert()">Upload</button>
+            <button onclick="showSection('saved-page', 2)">Saved Files</button>
+            <button onclick="showSection('faqs-page', 3)">FAQs</button>
+        </section>
+
+        <section id="capture-page" class="hidden">
+            <header>
+                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Capture
+            </header>
+        </section>
+
+        <section id="saved-page" class="hidden">
+            <header>
+                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Saved Files
+            </header>
+        </section>
+
+        <section id="faqs-page" class="hidden">
+            <header>
+                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>FAQs
+            </header>
+        </section>
+
+    </div><!--End of Mobile div-->
+    <div class="desktop">
+        <h1><i class="ri-hammer-line"></i><i class="ri-macbook-line"></i> Desktop Version is under construction</h1>
+        <p>Sorry for the inconvenience, but this application is accessible through mobile devices!</p>
+    </div><!--End of Desktop div-->
+</body>
+<script src="script.js"></script>
+
+</html>
