@@ -2,6 +2,15 @@ let intro = document.querySelector('.intro');
 let sections = document.querySelectorAll('section'); // stores all sections in an array  sections = [home-page, capture-page...]
 let backBtnContainer = document.querySelector('div.mobile');
 let imageCapture = document.querySelector('button#image-capture');
+const keyframes = [
+    { opacity: 0 },
+    { opacity: 1 }
+];
+const options = {
+    duration: 1000, // Animation duration in milliseconds
+    easing: 'ease-in-out', // Easing function
+    iterations: 1 // Number of times the animation should repeat
+};
 
 imageCapture.addEventListener('change', (event) => {
     if (event.target === document.getElementById('picture')) {
@@ -14,6 +23,27 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(
         () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            console.log(vh);
+        },
+        250
+    )
+    setTimeout(
+        () => {
+            intro.style.left = '0';
+        },
+        1000
+    )
+    setTimeout(
+        () => {
+            intro.animate(keyframes, options);
+        },
+        2000
+    )
+    setTimeout(
+        () => {
+            intro.style.opacity = 1;
             intro.style.left = '-100vw';
             appLogics.startHome();
         },
@@ -25,10 +55,6 @@ window.addEventListener('DOMContentLoaded', () => {
 const appLogics = (() => {
 
     const startHome = () => {
-        let vh = window.innerHeight * 0.01;
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-        console.log(vh);
-    
         return document.querySelector('#home-page').classList.remove('hidden'), document.querySelector('#home-page').classList.add('active');
     }
 
