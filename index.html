@@ -16,8 +16,9 @@
 <body>
     <div class="mobile">
 
-        <button id="back-btn" class="hidden" onclick="appLogics.showSection('home-page', 0)"><i id="back-icon"
+        <button id="back-btn" class="hidden"><i id="back-icon"
                 class="ri-arrow-left-line"></i></button>
+
         <input type="file" id="picture" name="picture" accept="image/png" capture="environment" style="display: none;"
             oninput="appLogics.previewFile(event)" /><!--Hidden handler for taken images-->
 
@@ -64,7 +65,7 @@
                 </div>
                 <div id="button-container">
                     <button id="OCR-button" onclick="appLogics.showSection('OCR-page')"><i
-                            class="ri-character-recognition-line"></i>Extract Text</button>
+                           id="OCR-icon" class="ri-character-recognition-line"></i>OCR</button>
                 </div>
             </div>
         </section>

@@ -1,6 +1,6 @@
 let intro = document.querySelector('.intro');
 let sections = document.querySelectorAll('section'); // stores all sections in an array  sections = [home-page, capture-page...]
-let backBtn = document.querySelector('button#back-btn')
+let backBtnContainer = document.querySelector('div.mobile');
 let imageCapture = document.querySelector('button#image-capture');
 
 imageCapture.addEventListener('change', (event) => {
@@ -27,14 +27,14 @@ const appLogics = (() => {
         return document.querySelector('#home-page').classList.remove('hidden'), document.querySelector('#home-page').classList.add('active');
     }
 
-    const showSection = (sectionId) => { //showSection = function, sectionId =
-        /*        console.log(backBtn); 
-                console.log(sectionId);*/
+    const showSection = (sectionId) => { //showSection >> function, sectionId >> page-name
+        /*        console.log(backBtn);
+        console.log(sectionId);*/
         const link = document.querySelector(`section#${sectionId}`);
         link.classList.add('active');
         link.classList.remove('hidden');
 
-        sectionId !== 'home-page' ? backBtn.classList.remove('hidden') : backBtn.classList.add('hidden'); //if the current section shown is not homepage then add back button otherwise remove
+        appLogics.backButton(sectionId);
 
         sections.forEach((section) => { //goes through all section element inside of the sections array
             if (section.id !== sectionId) { //if the current section id is not the current section being shown, hide that section
@@ -44,12 +44,33 @@ const appLogics = (() => {
         });
     }
 
+    const backButton = (sectionId) => {
+        const backBtn = document.querySelector('#back-btn');
+        sectionId !== 'home-page' ? (backBtn.classList.add('active'), backBtn.classList.remove('hidden')) : (backBtn.classList.add('hidden'), backBtn.classList.remove('active'))
+        backBtn.onclick = () => {
+            switch (sectionId) {
+                case 'preview-page':
+                    showSection('home-page');
+                    break
+                case 'OCR-page':
+                    showSection('preview-page');
+                    break
+                case 'saved-page':
+                    showSection('home-page');
+                    break
+                case 'faqs-page':
+                    showSection('home-page');
+                    break
+            }
+        }
+    }//end of backbutton function
+
     const takePic = () => {
         document.querySelector('#picture').click();
     }
 
     const previewFile = (event) => {
-        alert(`This should show the preview page`);
+        //alert(`This should show the preview page`);
         const input = event.target;
         const reader = new FileReader();
 
@@ -66,6 +87,7 @@ const appLogics = (() => {
     return {
         startHome,
         showSection,
+        backButton,
         takePic,
         previewFile,
     }

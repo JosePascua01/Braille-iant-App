@@ -29,6 +29,10 @@ body {
 }
 
 /*↓↓↓↓ Global Components ↓↓↓↓*/
+section {
+    height: 100vh;
+}
+
 h1 {
     font-size: 14rem;
 }
@@ -203,7 +207,7 @@ div#body {
     padding: 15% 7.5% 65%;
 }
 
-div#container{
+div#container {
     width: 100%;
     max-width: 315px;
     aspect-ratio: 1/1;
@@ -215,22 +219,23 @@ div#container{
 
 button:not(#back-btn, #OCR-button) {
     place-self: center;
-    width: calc((315px - 7.5% )/ 2);
+    width: calc((315px - 7.5%)/ 2);
     aspect-ratio: 1 / 1;
     border-radius: 25px;
     border: none;
     background-color: var(--button);
-    box-shadow: 0px 5px 20px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
     color: var(--text);
     font-size: 14rem;
     font-weight: 600;
 }
 
-i:not(#back-icon) { /*Icons*/
+i:not(#back-icon, #OCR-icon) {
+    /*Icons*/
     font-size: 80px;
     font-weight: 100;
     text-shadow:
-    2px 2px 2px rgba(0,0,0,0.5)
+        2px 2px 2px rgba(0, 0, 0, 0.5)
 }
 
 /*↓↓↓↓ Components for preview page ↓↓↓↓*/
@@ -238,11 +243,11 @@ div#preview-container {
     width: 100vw;
     height: calc(100vh - 100px);
     display: grid;
-    grid-template-rows: 80% 20%;
+    grid-template-rows: 85% 15%;
     padding: 0;
 }
 
-div#preview-img{
+div#preview-img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -251,12 +256,12 @@ div#preview-img{
     overflow: scroll;
 }
 
-img#output-img{
+img#output-img {
     max-width: 100%;
     max-height: 100%;
 }
 
-div#button-container{
+div#button-container {
     background-color: var(--header);
     width: 100vw;
     height: auto;
@@ -264,17 +269,28 @@ div#button-container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+
 }
 
-button#OCR-button{
+button#OCR-button {
     height: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: var(--header);
     color: var(--background);
-    font-weight: 100;
     margin: 0;
+    font-weight: 100;
+    font-size: 14rem;
+}
+
+i#OCR-icon {
+    font-size: 35rem;
+    text-shadow:
+        2px 2px 2px rgba(0, 0, 0, 0.5)
 }
 
 @keyframes fadeIn {
