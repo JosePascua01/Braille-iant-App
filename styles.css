@@ -3,6 +3,7 @@
     --button: #90bbde;
     --header: hsl(209, 55%, 24%);
     --text: #162651;
+    --vh: 1px;
 }
 
 * {
@@ -31,6 +32,7 @@ body {
 /*↓↓↓↓ Global Components ↓↓↓↓*/
 section {
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 h1 {
@@ -74,6 +76,7 @@ button#back-btn {
     opacity: 1;
     width: 100vw;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
 }
 
 .hidden {
@@ -95,6 +98,7 @@ div.intro {
     top: 0;
     width: 100vw;
     height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: var(--button);
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
@@ -242,6 +246,7 @@ i:not(#back-icon, #OCR-icon) {
 div#preview-container {
     width: 100vw;
     height: calc(100vh - 100px);
+    height: calc((var(--vh, 1vh) * 100) - 100px);
     display: grid;
     grid-template-rows: 85% 15%;
     padding: 0;
@@ -312,6 +317,7 @@ i#OCR-icon {
         display: flex;
         flex-direction: column;
         height: 100vh;
+        height: calc(var(--vh, 1vh) * 100);
         width: 100%;
         align-items: center;
         justify-content: center;

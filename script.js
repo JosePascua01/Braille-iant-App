@@ -11,6 +11,16 @@ imageCapture.addEventListener('change', (event) => {
 
 /*This Section is the loading page of the application*/
 window.addEventListener('DOMContentLoaded', () => {
+
+    setTimeout(
+        () => {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+            console.log(vh);
+        },
+        250
+    )
+
     setTimeout(
         () => {
             intro.style.left = '-100vw';
