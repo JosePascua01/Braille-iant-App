@@ -15,6 +15,13 @@
 
 <body>
     <div class="mobile">
+
+        <button id="back-btn" class="hidden"><i id="back-icon"
+                class="ri-arrow-left-line"></i></button>
+
+        <input type="file" id="picture" name="picture" accept="image/png" capture="environment" style="display: none;"
+            oninput="appLogics.previewFile(event)" /><!--Hidden handler for taken images-->
+
         <div class="intro">
             <div id="emptySpace1" class="white-background"></div>
             <div id="emptySpace2" class="white-background"></div>
@@ -35,29 +42,49 @@
             <div id="emptySpace14" class="white-background"></div>
         </div><!--End of Intro/Welcome Page-->
 
-        <section id="home-page" class="active">
+        <section id="home-page" class="hidden">
             <header>Braille'iant</header>
-            <button onclick="showSection('capture-page', 1)">Capture</button>
-            <button onclick="alert()">Upload</button>
-            <button onclick="showSection('saved-page', 2)">Saved Files</button>
-            <button onclick="showSection('faqs-page', 3)">FAQs</button>
+            <div id="body">
+                <div id="container">
+                    <button id="image-capture" onclick="appLogics.takePic()"><i
+                            class="ri-camera-line"></i><br>Capture</button>
+                    <button onclick="alert()"><i class="ri-upload-2-line"></i><br>Upload</button>
+                    <button onclick="appLogics.showSection('saved-page')"><i class="ri-folders-line"></i><br>Saved
+                        Files</button>
+                    <button onclick="appLogics.showSection('faqs-page')"><i
+                            class="ri-question-answer-line"></i><br>FAQs</button>
+                </div>
+            </div>
         </section>
 
-        <section id="capture-page" class="hidden">
-            <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Capture
-            </header>
+        <section id="preview-page" class="hidden">
+            <header>Preview</header>
+            <div id="preview-container">
+                <div id="preview-img">
+                    <img id="output-img" />
+                </div>
+                <div id="button-container">
+                    <button id="OCR-button" onclick="appLogics.showSection('OCR-page')"><i
+                           id="OCR-icon" class="ri-character-recognition-line"></i>OCR</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="OCR-page" class="hidden">
+            <header>OCR</header>
+            <div id="OCR-container">
+            </div>
         </section>
 
         <section id="saved-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>Saved Files
+                Saved Files
             </header>
         </section>
 
         <section id="faqs-page" class="hidden">
             <header>
-                <button class="back-btn hidden" onclick="showSection('home-page', 0)"><i class="ri-arrow-left-line"></i></button>FAQs
+                FAQs
             </header>
         </section>
 
