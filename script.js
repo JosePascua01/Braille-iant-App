@@ -112,6 +112,7 @@ const appLogics = (() => {
 
         showSection('preview-page');
         reader.readAsDataURL(input.files[0]);
+        console.log(input.files.length)
     }
 
 
